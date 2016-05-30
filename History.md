@@ -1,3 +1,151 @@
+0.11.0 / 2016-05-13
+===================
+
+* force node_redis version to 2.4.x, Closes #857
+* Converting Job ids back into integers, #855
+* Fix LPUSH crash during shutdown, #854
+* Install kue-dashboard script, #853
+* Add start event to documentation, #841
+* Add parameter for testMode.enter to continue processing jobs, #821
+* Modern Node.js versions support, #812
+* Don't start the next job until the current one is totally finished, Closes #806
+* Store multiple instances of jobs in jobs id map to emit events for all, #750 
+
+
+0.10.6 / 2016-04-27
+===================
+
+* Redis Cluster fix, Closes #861
+
+
+0.10.5 / 2016-01-14
+===================
+
+* Attempts surpassing max attempts on delay jobs upon failure, resulting in infinite retries, Fixes #797
+* Add yargs dependency for kue-dashboard, #796
+
+
+0.10.4 / 2016-01-14
+===================
+
+* fix zpop callback on shutdown
+* fix connection_options in test.js
+* Unit tests for redis.js #779
+* Tests for kue.js #778
+
+
+0.10.3 / 2015-11-20
+===================
+
+* Fixing Job processing order without munging the job id, Closes #708, Closes #678
+
+
+0.10.2 / 2015-11-20
+===================
+
+* Add support for ioredis, Closes #652
+* Add support for Redis Cluster, Closes #642
+* Fix `this.state` on refreshTTL 
+
+
+0.10.0 / 2015-11-20
+===================
+
+* Update TTL on job progress, Closes #694
+* Upgrade to node_redis 2.3,  #717
+* Fix LPUSH vs connection quit race when shutting down
+* Restart task btn, #754
+* Fix uncaught exception in job.js, #751
+* Added kue-dashboard script for conveniently running the dashboard #611
+* Fixed invalid CSS on production, #755
+* Connection string not supporting DB number #725
+* Fix attempts remaining logic, #742
+* Update jade, #741
+* Properly set job IDs in test mode, #727
+* Enhanced Job.log formatting, #630
+* Use node's util#format() in Job.log, #724
+
+
+0.9.6 / 2015-10-06
+===================
+
+* Fix redirection issue
+
+
+0.9.5 / 2015-09-16
+===================
+
+* When no ttl is set for jobs, don't let high priorities to conflict, fixes #697
+* Fix redirection issue, closes #685
+* Get progress_data along with other redis fields, PR #642
+* Grab only password from Redis URL, fixes #681
+* Add remove job event, PR #665
+
+
+0.9.4 / 2015-07-17
+===================
+
+* Job that doesn't call done() retries twice, fixes #669
+
+
+0.9.3 / 2015-05-07
+===================
+
+* Fix unlocking promotion lock, Closes #608
+
+
+0.9.2 / 2015-05-07
+===================
+
+* Fix duplicate job promotion/ttl race, Closes #601
+
+
+0.9.1 / 2015-05-05
+===================
+
+* Filter only jobs that have ttl set, Fixes #590
+
+
+0.9.0 / 2015-05-02
+===================
+
+* Upgrade to express 4.x, Closes #537
+* Move `job.reprocess` done callback to the last, Closes #387, Closes #385
+* Standardize signature of `.shutdown()` callback, Closes #454
+* Turn off search indexes by default, Closes #412
+* Improve delayed job promotion feature, Closes #533, fixes #312, closes #352
+* Use a distributed redis lock to hide job promotion from user, Closes #556
+* Deprecate `.promote` and update documentation
+* Document Javascript API to query queue state, Closes #455
+* Add jobEvents flag to switch off job events for memory optimization, Closes #401
+* Add idle event to capture unsuccessful zpop's in between of worker get Job, should fix #538
+* Add TTL for active jobs, Closes #544
+* Document `jobEvents` queue config, Closes #557
+* Bulk job create API now processes all jobs in case of intermediate errors, Closes #552
+* Merge `red job remove buttons and tooltips` PR, Closes #566
+* Add a in-memory test Kue mode, Closes #561
+* Update reds package to `0.2.5`
+* Merge PR #594, bad redirect URL in old express versions, fixes #592
+* update dependency to forked warlock repo to fix redis connection cleanup on shutdown, fixes #578
+* Update job hash with the worker ID, Closes #580
+
+
+0.8.12 / 2015-03-22
+===================
+
+* Bulk job create JSON API, Closes #334, Closes #500, Closes #527
+* Add feature to specify redis connection string/url, Closes #540
+* Mention kue-ui in readme, Closes #502
+* Add an extra parameter to the progress method to notify extra contextual data, Closes #466, Closes #427, Closes #313
+* Document job event callback arguments, Closes #542
+* Fix typo in documentation, Closes #506
+* Document importance of using Kue `error` listeners, Closes #409
+* Document Queue maintenance and job.removeOnComplete( true ), Closes #439
+* Document how to query all the active jobs programmatically, Closes #418
+* Document to explain how "stuck queued jobs" happens, Closes #451
+* Document on proper error handling to prevent stuck jobs, Closes #391
+
+
 0.8.11 / 2014-12-15
 ===================
 
